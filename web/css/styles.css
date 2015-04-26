@@ -14,3 +14,7 @@ p.padd-submit {
     padding-top: 26px;
     padding-left: 186px;
 }
+th, td {
+    width: 100px;
+    text-align: center;
+}
