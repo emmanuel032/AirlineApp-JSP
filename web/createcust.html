@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create new account</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="css/styles.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Create new account</h1>
+        <form name="createcust" action="">
+            <label for="username">Username</label>
+            <input type="text" name="username" required="required" size="24"/><br/>
+            <label for="password">Password</label>
+            <input type="text" name="password" required="required" size="24"/><br/>
+            <label for="fname">First Name</label>
+            <input type="text" name="fname" required="required" size="24"/><br/>
+            <label for="lname">Last Name</label>
+            <input type="text" name="lname" required="required" size="24"/><br/>
+            <label for="father">Father's Name</label>
+            <input type="text" name="father" size="24"/><br/>
+            <label for="gender">Gender</label>
+            <select name="gender">
+                <option value="" selected="selected">--Select--</option>
+                <option value="M">M</option>
+                <option value="F">F</option>
+            </select><br/>
+            <label for="dob">DOB</label>
+            <input type="text" name="dob" size="24"/><br/>
+            <label for="addr1">Address Line 1</label>
+            <input type="text" name="addr1" size="24"/><br/>
+            <label for="addr2">Address Line 2</label>
+            <input type="text" name="addr2" size="24"/><br/>
+            <label for="city">City</label>
+            <input type="text" name="city" size="24"/><br/>
+            <label for="state">State</label>
+            <input type="text" name="state" size="2"/><br/>
+            <label for="zip">Zip</label>
+            <input type="text" name="zip" size="24"/><br/>
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" required="required" size="24"/><br/>
+            <label for="email">Email</label>
+            <input type="text" name="email" required="required" size="24"/><br/>
+            <label for="prof">Profession</label>
+            <select name="prof">
+                <option value="" selected="selected">--Select--</option>
+                <option value="Arts">Arts</option>
+                <option value="Business">Business</option>
+                <option value="Education">Education</option>
+                <option value="Government">Government</option>
+                <option value="Health">Health</option>
+                <option value="Service">Service</option>
+                <option value="Technology">Technology</option>
+                <option value="Other">Other</option>
+            </select><br/>
+            <label for="security">Security</label>
+            <select name="security">
+                <option value="N" selected="selected">No</option>
+                <option value="Y">Yes</option>
+            </select>
+            <label for="conc" class="conc">Concession</label>
+            <select name="conc">
+                <option value="N" selected="selected">No</option>
+                <option value="Y">Yes</option>
+            </select><br/>
+            <p class="padd-submit">
+                <input type="submit" value="Confirm"/>
+                <input type="reset" value="Clear form"/>
+            </p>
+        </form>
+       
+    </body>
+</html>
