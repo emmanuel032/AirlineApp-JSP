@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search Flights</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/styles.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Search for flights</h1>
+        <form name="searchfl" action="" onsubmit="checkForm()">
+            <p>Select travel date: &nbsp;
+            <select name="traveldate">
+                <option value="" selected="selected">--Select--</option>
+                <option value="01-JUN-2015">June 1, 2015</option>
+                <option value="02-JUN-2015">June 2, 2015</option>
+                <option value="03-JUN-2015">June 3, 2015</option>
+                <option value="04-JUN-2015">June 4, 2015</option>
+                <option value="05-JUN-2015">June 5, 2015</option>
+                <option value="06-JUN-2015">June 6, 2015</option>
+                <option value="07-JUN-2015">June 7, 2015</option>
+            </select></p>
+            <p><input type="submit" value="Search"></p>
+        </form>
+        
+        <!-- Javascript validation -->
+        <script type="text/javascript">
+            function checkForm(){
+                selectOK = false;
+                inputDate = document.searchfl.traveldate.value;
+                
+                if (inputDate !="")
+                    selectOK = true;
+                if (selectOK == true)
+                    return true;
+                else{
+                    alert("Please select a date.");
+                }
+                return false;
+            }
+        </script>
+    </body>
+</html>
