@@ -29,7 +29,7 @@
             //CallableStatement myStmt = null;
             ResultSet result = null;
 
-            // input vars
+            // form vars
             String inputDate = request.getParameter("traveldate");
 
             try {
@@ -40,9 +40,9 @@
                 conn = DriverManager.getConnection(db, user, password);
 
                 // prepare statement
-                sqlStatement = conn.createStatement();
                 String sql = "select * from flights where departuredate = " 
                         + "'" + inputDate + "'";
+                sqlStatement = conn.createStatement();
                 
                 // execute statement
                 result = sqlStatement.executeQuery(sql);
@@ -60,9 +60,9 @@
                         + "</tr>";
                 String allRecords = "";
                 boolean found = false;
+                NumberFormat f = NumberFormat.getCurrencyInstance();
                 while (result.next()) {
                     found = true;
-                    NumberFormat f = NumberFormat.getCurrencyInstance();
                     allRecords = allRecords + "<tr>";
                     allRecords = allRecords + "<td>" + result.getInt(1) + "</td>";
                     allRecords = allRecords + "<td>" + result.getString(2) + " ";
@@ -79,6 +79,7 @@
                     out.println("No flights found");
                 } else {
                     out.println(tableHeader + allRecords + "</table>");
+                    out.println("<a href=''>Make reservation</a>");
                 }   
 
                 /*
