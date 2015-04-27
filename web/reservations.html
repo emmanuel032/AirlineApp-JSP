@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reservations</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/styles.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Make Reservation</h1>
+        <form name="reserve" action="">
+            <p>
+                Flight ID:&nbsp;<input name="fid" type="text" size="2" required/>
+                Number of passengers:&nbsp;<input name="numpass" type="text" size="2" required/>
+            </p>
+            <h4>Passenger details</h4>
+            <table>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Gender</th>
+                    <th>DOB</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Seat No.</th>
+                </tr>
+                <tr id="p-row1">
+                    <td><input type="text" name="fname1" required size="16"/></td>
+                    <td><input type="text" name="lname1" required size="16"/></td>
+                    <td>
+                        <select name="gender1">
+                            <option value="" selected="selected">--</option>
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="dob1" size="10"/></td>
+                    <td><input type="text" name="phone1" required size="12"/></td>
+                    <td><input type="text" name="email1" size="12"/></td>
+                    <td><input type="text" name="seat1" size="3"/></td>
+                </tr>
+                <tr id="p-row2">
+                    <td><input type="text" name="fname2" required size="16"/></td>
+                    <td><input type="text" name="lname2" required size="16"/></td>
+                    <td>
+                        <select name="gender2">
+                            <option value="" selected="selected">--</option>
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="dob2" size="10"/></td>
+                    <td><input type="text" name="phone2" required size="12"/></td>
+                    <td><input type="text" name="email2" size="12"/></td>
+                    <td><input type="text" name="seat2" size="3"/></td>
+                </tr>
+                <tr id="p-row3">
+                    <td><input type="text" name="fname3" required size="16"/></td>
+                    <td><input type="text" name="lname3" required size="16"/></td>
+                    <td>
+                        <select name="gender3">
+                            <option value="" selected="selected">--</option>
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="dob3" size="10"/></td>
+                    <td><input type="text" name="phone3" required size="12"/></td>
+                    <td><input type="text" name="email3" size="12"/></td>
+                    <td><input type="text" name="seat3" size="3"/></td>
+                </tr>
+                <tr id="p-row4">
+                    <td><input type="text" name="fname4" required size="16"/></td>
+                    <td><input type="text" name="lname4" required size="16"/></td>
+                    <td>
+                        <select name="gender4">
+                            <option value="" selected="selected">--</option>
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="dob4" size="10"/></td>
+                    <td><input type="text" name="phone4" required size="12"/></td>
+                    <td><input type="text" name="email4" size="12"/></td>
+                    <td><input type="text" name="seat4" size="3"/></td>
+                </tr>
+            </table>
+            <p>
+                <input type="submit" value="Make Reservation"/>
+                <input type="reset" value="Clear form"/>
+            </p>
+        </form>
+    </body>
+</html>

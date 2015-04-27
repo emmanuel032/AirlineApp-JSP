@@ -22,3 +22,7 @@ span {
     line-height: 1.4;
     padding-right: 24px;
 }
+table {
+    border: solid 1px;
+    padding: 2px;
+}
