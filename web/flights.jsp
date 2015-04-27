@@ -8,6 +8,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.CallableStatement"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="com.montgomeryhatch.SessionVars"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,12 +22,8 @@
         <!-- JSP code -->
         <%
             // db vars
-            String db = "jdbc:oracle:thin:@localhost:1521:orcl";
-            String user = "airline_user";
-            String password = "password";
             Connection conn = null;
             Statement sqlStatement = null;
-            //CallableStatement myStmt = null;
             ResultSet result = null;
 
             // form vars
@@ -37,7 +34,8 @@
                 Class.forName("oracle.jdbc.driver.OracleDriver");
 
                 // connect to db
-                conn = DriverManager.getConnection(db, user, password);
+                conn = DriverManager.getConnection(SessionVars.db, 
+                        SessionVars.user, SessionVars.password);
 
                 // prepare statement
                 String sql = "select * from flights where departuredate = " 
@@ -83,34 +81,6 @@
                     out.println(reserve);
                 }   
 
-                /*
-                // prepare statement
-                myStmt = conn.prepareCall("{call search_flights(?)}");
-                
-                // set parameters
-                myStmt.setString(1, inputDate);
-                
-                // execute statement
-                myStmt.execute();
-                result = myStmt.getResultSet();
-                
-                // display results 
-                out.println("<p>hello</p>");
-                
-                out.println(result);
-                String allRecords = "";
-                boolean found = false;
-                while (result.next()) {
-                    found = true;
-                    String zip = result.getString(1);
-                    allRecords = allRecords + zip + "<br>";
-                }
-                if (found == false) {
-                    out.println("No flights found");
-                } else {
-                    out.println(allRecords);
-                }   
-                 */
             } catch (Exception e) {
                 out.println("Error: " + e);
             }
