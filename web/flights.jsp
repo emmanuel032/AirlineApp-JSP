@@ -58,6 +58,7 @@
                         + "<th>Arrival</th>"
                         + "<th>Fare</th>"
                         + "</tr>";
+                String reserve = "<a href=''>Make reservation</a>";
                 String allRecords = "";
                 boolean found = false;
                 NumberFormat f = NumberFormat.getCurrencyInstance();
@@ -79,7 +80,7 @@
                     out.println("No flights found");
                 } else {
                     out.println(tableHeader + allRecords + "</table>");
-                    out.println("<a href=''>Make reservation</a>");
+                    out.println(reserve);
                 }   
 
                 /*
