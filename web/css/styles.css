@@ -26,3 +26,6 @@ table {
     border: solid 1px;
     padding: 2px;
 }
+.hide {
+    display: none;
+}

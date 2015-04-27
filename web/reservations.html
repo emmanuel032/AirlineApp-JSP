@@ -10,8 +10,10 @@
         <h1>Make Reservation</h1>
         <form name="reserve" action="">
             <p>
-                Flight ID:&nbsp;<input name="fid" type="text" size="2" required/>
-                Number of passengers:&nbsp;<input name="numpass" type="text" size="2" required/>
+                Flight ID:&nbsp;
+                <input name="fid" type="text" size="2" required/>
+                Number of passengers:&nbsp;
+                <input name="numpass" type="text" size="2" required onblur="checkNumPass()"/>
             </p>
             <h4>Passenger details</h4>
             <table>
@@ -39,7 +41,7 @@
                     <td><input type="text" name="email1" size="12"/></td>
                     <td><input type="text" name="seat1" size="3"/></td>
                 </tr>
-                <tr id="p-row2">
+                <tr id="p-row2" class="hide">
                     <td><input type="text" name="fname2" required size="16"/></td>
                     <td><input type="text" name="lname2" required size="16"/></td>
                     <td>
@@ -54,7 +56,7 @@
                     <td><input type="text" name="email2" size="12"/></td>
                     <td><input type="text" name="seat2" size="3"/></td>
                 </tr>
-                <tr id="p-row3">
+                <tr id="p-row3" class="hide">
                     <td><input type="text" name="fname3" required size="16"/></td>
                     <td><input type="text" name="lname3" required size="16"/></td>
                     <td>
@@ -69,7 +71,7 @@
                     <td><input type="text" name="email3" size="12"/></td>
                     <td><input type="text" name="seat3" size="3"/></td>
                 </tr>
-                <tr id="p-row4">
+                <tr id="p-row4" class="hide">
                     <td><input type="text" name="fname4" required size="16"/></td>
                     <td><input type="text" name="lname4" required size="16"/></td>
                     <td>
@@ -90,5 +92,37 @@
                 <input type="reset" value="Clear form"/>
             </p>
         </form>
+        
+        <!-- Javascript -->
+        <script type="text/javascript">
+            function checkNumPass(){
+                num = document.reserve.numpass.value;
+                
+                switch (num){
+                    case "1":
+                        document.getElementById("p-row2").className = "hide";
+                        document.getElementById("p-row3").className = "hide";
+                        document.getElementById("p-row4").className = "hide";
+                        break
+                    case "2":
+                        document.getElementById("p-row2").className = "visible";
+                        document.getElementById("p-row3").className = "hide";
+                        document.getElementById("p-row4").className = "hide";
+                        break
+                    case "3":
+                        document.getElementById("p-row2").className = "visible";
+                        document.getElementById("p-row3").className = "visible";
+                        document.getElementById("p-row4").className = "hide";
+                        break
+                    case "4":
+                        document.getElementById("p-row2").className = "visible";
+                        document.getElementById("p-row3").className = "visible";
+                        document.getElementById("p-row4").className = "visible";
+                        break;
+                    default:
+                        alert("Maximum of 4 passengers per reservation");
+                }
+            }
+        </script>
     </body>
 </html>
