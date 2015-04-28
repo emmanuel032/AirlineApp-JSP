@@ -12,17 +12,19 @@
             <p>
                 Flight ID:&nbsp;
                 <input name="fid" type="text" size="2" required/>
+                    <span class="required">&nbsp;*</span>
                 Number of passengers:&nbsp;
                 <input name="numpass" type="text" size="2" required onblur="checkNumPass()"/>
+                    <span class="required">&nbsp;*</span>
             </p>
             <h3>Passenger details</h3>
             <table>
                 <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
+                    <th>First name<span class="required">&nbsp;*</span></th>
+                    <th>Last name<span class="required">&nbsp;*</span></th>
                     <th>Gender</th>
                     <th>DOB</th>
-                    <th>Phone</th>
+                    <th>Phone<span class="required">&nbsp;*</span></th>
                     <th>Email</th>
                     <th>Seat No.</th>
                 </tr>

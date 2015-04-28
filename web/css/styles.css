@@ -22,6 +22,12 @@ span {
     line-height: 1.4;
     padding-right: 24px;
 }
+span.required {
+    line-height: 1;
+    padding-right: 0 2px;
+    color: red;
+    font-size: 14px;
+}
 table {
     border: solid 1px;
     padding: 2px;
