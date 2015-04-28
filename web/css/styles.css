@@ -2,7 +2,7 @@
 html, body {
     background-color: #63D1F4;
 }
-label {
+label, .signinput {
     display: inline-block;
     width: 120px;
     padding: 3px;
