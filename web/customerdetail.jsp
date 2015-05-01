@@ -2,6 +2,9 @@
     Insert customer into Customers table
 --%>
 
+<%@page import="java.sql.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.DateFormat"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.CallableStatement"%>
 <%@page import="java.sql.Connection"%>
@@ -22,14 +25,17 @@
             Connection conn = null;
             CallableStatement myStmt = null;
 
-            // form vars
+            // get form vars
+            DateFormat df = new SimpleDateFormat("MM-dd-YYYY");
+            
             String inputUser = request.getParameter("username");
             String inputPw = request.getParameter("password");
             String inputFirst = request.getParameter("fname");
             String inputLast = request.getParameter("lname");
             String inputFather = request.getParameter("father");
             String inputGender = request.getParameter("gender");
-            String inputDOB = request.getParameter("dob");
+            java.util.Date javaDate = df.parse(request.getParameter("dob"));
+            java.sql.Date inputDOB = new Date(javaDate.getTime());
             String inputAddr1 = request.getParameter("addr1");
             String inputAddr2 = request.getParameter("addr2");
             String inputCity = request.getParameter("city");
@@ -51,7 +57,7 @@
 
                 // prepare statement
                 myStmt = conn.prepareCall("{"
-                        + "call insert_cust(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+                        + "call insert_cust(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
 
                 // set parameters
                 myStmt.setString(1, inputUser);
@@ -60,7 +66,7 @@
                 myStmt.setString(4, inputLast);
                 myStmt.setString(5, inputFather);
                 myStmt.setString(6, inputGender);
-                myStmt.setString(7, inputDOB);
+                myStmt.setDate(7, inputDOB);
                 myStmt.setString(8, inputAddr1);
                 myStmt.setString(9, inputAddr2);
                 myStmt.setString(10, inputCity);
@@ -71,12 +77,14 @@
                 myStmt.setString(15, inputProf);
                 myStmt.setString(16, inputSecurity);
                 myStmt.setString(17, inputConc);
-
+                
+                // register statement
+                myStmt.registerOutParameter(18, java.sql.Types.NUMERIC);
+                
                 // execute statement
                 myStmt.execute();
-                //int id = myStmt.getInt(1);
-                int id = 5;
-                SessionVars.custID = id;
+                SessionVars.custID = myStmt.getInt(18);
+                out.println("Session id: "+SessionVars.custID);
                 
                 // display results 
                 String custDetail = "<h3>Your account has been created!</h3>"

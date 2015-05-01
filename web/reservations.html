@@ -13,10 +13,18 @@
                 Flight ID:&nbsp;
                 <input name="fid" type="text" size="2" required/>
                     <span class="required">&nbsp;*</span>
+                Seat class:&nbsp;
+                <select name="clss">
+                    <option value="ECO" selected="selected">Economy</option>
+                    <option value="FST">First class</option>
+                </select>
+                    <span class="required">&nbsp;*</span>
                 Number of passengers:&nbsp;
-                <input name="numpass" type="text" size="2" required onblur="checkNumPass()"/>
+                <input name="numpass" type="text" size="2" required 
+                       onchange="checkSeats()" onblur="checkNumPass()"/>
                     <span class="required">&nbsp;*</span>
             </p>
+            <div id="seats-avail"></div>
             <h3>Passenger details</h3>
             <table>
                 <tr>
@@ -96,10 +104,24 @@
         </form>
         
         <!-- Javascript -->
+        <script src="js/jquery_2_1_3.js"></script>
+        <script>
+            function checkSeats(){
+                var fid = document.reserve.fid.value;
+                var cl = document.reserve.clss.value;
+                var num = document.reserve.numpass.value;
+                //$("#seats-avail").html("hi" + num);
+                // check if seats available
+                $.post("checkSeats.jsp", {fid: fid, cl: cl, num: num}, function (data){
+                    $("#seats-avail").html(data);
+                }); 
+            }
+        </script>
         <script type="text/javascript">
             function checkNumPass(){
-                num = document.reserve.numpass.value;
+                var num = document.reserve.numpass.value;
                 
+                // add passenger form lines
                 switch (num){
                     case "1":
                         document.getElementById("p-row2").className = "hide";

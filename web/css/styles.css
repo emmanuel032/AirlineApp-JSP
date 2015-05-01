@@ -35,3 +35,6 @@ table {
 .hide {
     display: none;
 }
+#seats-avail {
+    color: red;
+}
