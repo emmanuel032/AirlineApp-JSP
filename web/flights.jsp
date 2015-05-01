@@ -57,7 +57,7 @@
                         + "<th>Arrival</th>"
                         + "<th>Fare</th>"
                         + "</tr>";
-                String reserve = "<a href=''>Make reservation</a>";
+                String reserve = "<a href='reservations.html'>Make reservation</a>";
                 String allRecords = "";
                 boolean found = false;
                 NumberFormat cf = NumberFormat.getCurrencyInstance();
