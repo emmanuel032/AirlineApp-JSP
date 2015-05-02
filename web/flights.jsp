@@ -59,9 +59,9 @@
                         + "</tr>";
                 String reserve = "<a href='reservations.html'>Make reservation</a>";
                 String allRecords = "";
-                boolean found = false;
                 NumberFormat cf = NumberFormat.getCurrencyInstance();
                 DateFormat df = new SimpleDateFormat("MM-dd-YYYY");
+                boolean found = false;
                 while (result.next()) {
                     found = true;
                     allRecords = allRecords + "<tr>";
