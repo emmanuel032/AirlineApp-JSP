@@ -1,6 +1,7 @@
 <%-- 
-    insert reservation data into 
+    Insert reservation data into 
     Reservations, Passengers, and Reservation_Lines tables
+    Decrement seats available
 --%>
 
 <%@page import="java.sql.Date"%>

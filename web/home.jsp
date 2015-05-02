@@ -34,7 +34,7 @@
                 // connect to db
                 conn = DriverManager.getConnection(SessionVars.db, 
                         SessionVars.user, SessionVars.password);
-
+                
                 // get customer name
                 String qName = "select custfname from customers "
                         + "where custid = " + SessionVars.custID;
@@ -48,6 +48,11 @@
                 String name = resultName.getString(1);
                 out.println("<h1>Welcome &nbsp;" + name + "!</h1>");
                 
+            } catch (Exception e) {
+                out.println("Error: " + e);
+            }
+            
+            try {
                 // get customer reservations
                 String qReservations = "select r.resid, f.departuredate, "
                         + "f.flightname, f.flightcode, f.origin, f.destination, "
@@ -63,7 +68,8 @@
                 resultRes = selectRes.executeQuery(qReservations);
 
                 // display reservations
-                String tableHeader = "<h3>Reservations</h3><table><tr>"
+                out.println("<h3>Reservations</h3>");
+                String tableHeader = "<table><tr>"
                         + "<th>Reservation No.</th>"
                         + "<th>Flight Date</th>"
                         + "<th>Flight No.</th>"
@@ -93,7 +99,7 @@
                     allRecords = allRecords + "</tr>";
                 }
                 if (found == false) {
-                    out.println("No flights found");
+                    out.println("No reservations found<br><br>");
                 } else {
                     out.println(tableHeader + allRecords + "</table>");
                 }  
@@ -103,7 +109,7 @@
             }
         %>
         <div id="cancel">
-            <form name="cancel" action="">
+            <form name="cancel" action="cancellation.jsp">
                 <input type="submit" value="Cancel reservation">
                 &nbsp;Reservation No.&nbsp;
                 <input type="text" name="resid" size="2" required>
