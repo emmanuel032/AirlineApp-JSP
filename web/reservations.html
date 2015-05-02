@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>Make Reservation</h1>
-        <form name="reserve" action="">
+        <form name="reserve" action="resconfirm.jsp">
             <p>
                 Flight ID:&nbsp;
                 <input name="fid" type="text" size="2" required/>
@@ -31,7 +31,7 @@
                     <th>First name<span class="required">&nbsp;*</span></th>
                     <th>Last name<span class="required">&nbsp;*</span></th>
                     <th>Gender</th>
-                    <th>DOB</th>
+                    <th>DOB<span class="required">&nbsp;*</span></th>
                     <th>Phone<span class="required">&nbsp;*</span></th>
                     <th>Email</th>
                     <th>Seat No.</th>
@@ -46,14 +46,14 @@
                             <option value="F">F</option>
                         </select>
                     </td>
-                    <td><input type="text" name="dob1" size="10"/></td>
+                    <td><input type="text" name="dob1" placeholder="MM-DD-YYYY" size="10" required/></td>
                     <td><input type="text" name="phone1" required size="12"/></td>
                     <td><input type="text" name="email1" size="12"/></td>
                     <td><input type="text" name="seat1" size="3"/></td>
                 </tr>
                 <tr id="p-row2" class="hide">
-                    <td><input type="text" name="fname2" required size="16"/></td>
-                    <td><input type="text" name="lname2" required size="16"/></td>
+                    <td><input type="text" name="fname2" size="16"/></td>
+                    <td><input type="text" name="lname2" size="16"/></td>
                     <td>
                         <select name="gender2">
                             <option value="" selected="selected">--</option>
@@ -61,14 +61,14 @@
                             <option value="F">F</option>
                         </select>
                     </td>
-                    <td><input type="text" name="dob2" size="10"/></td>
-                    <td><input type="text" name="phone2" required size="12"/></td>
+                    <td><input type="text" name="dob2" placeholder="MM-DD-YYYY" size="10"/></td>
+                    <td><input type="text" name="phone2" size="12"/></td>
                     <td><input type="text" name="email2" size="12"/></td>
                     <td><input type="text" name="seat2" size="3"/></td>
                 </tr>
                 <tr id="p-row3" class="hide">
-                    <td><input type="text" name="fname3" required size="16"/></td>
-                    <td><input type="text" name="lname3" required size="16"/></td>
+                    <td><input type="text" name="fname3" size="16"/></td>
+                    <td><input type="text" name="lname3" size="16"/></td>
                     <td>
                         <select name="gender3">
                             <option value="" selected="selected">--</option>
@@ -76,14 +76,14 @@
                             <option value="F">F</option>
                         </select>
                     </td>
-                    <td><input type="text" name="dob3" size="10"/></td>
-                    <td><input type="text" name="phone3" required size="12"/></td>
+                    <td><input type="text" name="dob3" placeholder="MM-DD-YYYY" size="10"/></td>
+                    <td><input type="text" name="phone3" size="12"/></td>
                     <td><input type="text" name="email3" size="12"/></td>
                     <td><input type="text" name="seat3" size="3"/></td>
                 </tr>
                 <tr id="p-row4" class="hide">
-                    <td><input type="text" name="fname4" required size="16"/></td>
-                    <td><input type="text" name="lname4" required size="16"/></td>
+                    <td><input type="text" name="fname4" size="16"/></td>
+                    <td><input type="text" name="lname4" size="16"/></td>
                     <td>
                         <select name="gender4">
                             <option value="" selected="selected">--</option>
@@ -91,14 +91,14 @@
                             <option value="F">F</option>
                         </select>
                     </td>
-                    <td><input type="text" name="dob4" size="10"/></td>
-                    <td><input type="text" name="phone4" required size="12"/></td>
+                    <td><input type="text" name="dob4" placeholder="MM-DD-YYYY" size="10"/></td>
+                    <td><input type="text" name="phone4" size="12"/></td>
                     <td><input type="text" name="email4" size="12"/></td>
                     <td><input type="text" name="seat4" size="3"/></td>
                 </tr>
             </table>
             <p>
-                <input type="submit" value="Make Reservation"/>
+                <input type="submit" value="Confirm Reservation"/>
                 <input type="reset" value="Clear form"/>
             </p>
         </form>

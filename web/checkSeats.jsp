@@ -1,3 +1,7 @@
+<%-- 
+    Check if seats available on selected flight
+--%>
+
 <%@page import="com.montgomeryhatch.SessionVars"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
