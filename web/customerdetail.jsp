@@ -84,7 +84,7 @@
                 // execute statement
                 myStmt.execute();
                 SessionVars.custID = myStmt.getInt(18);
-                out.println("Session id: "+SessionVars.custID);
+                //out.println("Session id: "+SessionVars.custID);
                 
                 // display results 
                 String custDetail = "<h3>Your account has been created!</h3>"
