@@ -110,7 +110,7 @@
                 var fid = document.reserve.fid.value;
                 var cl = document.reserve.clss.value;
                 var num = document.reserve.numpass.value;
-                //$("#seats-avail").html("hi" + num);
+                
                 // check if seats available
                 $.post("checkSeats.jsp", {fid: fid, cl: cl, num: num}, function (data){
                     $("#seats-avail").html(data);

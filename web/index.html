@@ -8,13 +8,28 @@
     </head>
     <body>
         <h1>Sign In</h1>
-        <form name="signin" action="">
+        <div name="signin">
             <span class="signinput">Username:</span><br>
-            <input type="text" name="usrname" size="24" required><br>
+            <input type="text" id="usrname" size="24" required><br>
             <span class="signinput">Password:</span><br>
-            <input type="password" name="passwrd" size="24" required>
-            <p><input type="submit" value="Submit"></p>
-        </form>
+            <input type="password" id="passwrd" size="24" required>
+            <p><input type="button" value="Submit" onclick="signIn()"></p>
+        </div>
         <p><a href="createcust.html">Create new account</a></p>
+        <div id="validation"></div>
+        
+        <!-- Javascript -->
+        <script src="js/jquery_2_1_3.js"></script>
+        <script>
+            function signIn(){
+                var uname = $('#usrname').val();
+                var pwd = $('#passwrd').val();
+                
+                // check if customer exists
+                $.post("validateUser.jsp", {usr: uname, pw: pwd}, function (data){
+                    $("#validation").html(data);
+                }); 
+            }
+        </script>
     </body>
 </html>
