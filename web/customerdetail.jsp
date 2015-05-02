@@ -104,16 +104,13 @@
                         + "<span>Email:</span>" + inputEmail + "<br>"
                         + "<span>Profession:</span>" + inputProf + "<br>"
                         + "<span>Security:</span>" + inputSecurity + "<br>";
-                String search = "<a href='searchflights.html'>"
-                        + "Search for flights</a>";
-                out.println("Session id is: "+SessionVars.custID);
                 out.println(custDetail);
-                out.println(search);
-
                 
             } catch (Exception e) {
                 out.println("Error: " + e);
             }
         %>
+        <br>
+        <a href='searchflights.html'>Search for flights</a>
     </body>
 </html>

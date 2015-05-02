@@ -103,11 +103,11 @@
             }
         %>
         <div id="cancel">
-        <form  action="">
-            <input type="submit" value="Cancel reservation">
-            &nbsp;Reservation No.&nbsp;
-            <input type="text" name="resid" size="2" required>
-        </form>
+            <form name="cancel" action="">
+                <input type="submit" value="Cancel reservation">
+                &nbsp;Reservation No.&nbsp;
+                <input type="text" name="resid" size="2" required>
+            </form>
         </div>
         <a href="searchflights.html">Search for flights</a>
     </body>

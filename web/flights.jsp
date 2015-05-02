@@ -57,7 +57,6 @@
                         + "<th>Arrival</th>"
                         + "<th>Fare</th>"
                         + "</tr>";
-                String reserve = "<a href='reservations.html'>Make reservation</a>";
                 String allRecords = "";
                 NumberFormat cf = NumberFormat.getCurrencyInstance();
                 DateFormat df = new SimpleDateFormat("MM-dd-YYYY");
@@ -80,12 +79,13 @@
                     out.println("No flights found");
                 } else {
                     out.println(tableHeader + allRecords + "</table>");
-                    out.println(reserve);
                 }   
 
             } catch (Exception e) {
                 out.println("Error: " + e);
             }
         %>
+        <br>
+        <a href='reservations.html'>Make reservation</a>
     </body>
 </html>
