@@ -121,7 +121,7 @@
         
         <h2>Your reservation has been confirmed!</h2>
         <ul>
-            <li><a href="searchflights.html">New search</a></li>
+            <li><a href="staticpages/searchflights.html">New search</a></li>
             <li><a href="home.jsp">View reservations</a></li>
         </ul>
     </body>

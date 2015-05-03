@@ -49,7 +49,7 @@
                     SessionVars.custID = result.getInt(1);
 
                     if (SessionVars.custID == 1)
-                        response.sendRedirect("dashboard.html");
+                        response.sendRedirect("staticpages/dashboard.html");
                     else
                         response.sendRedirect("home.jsp");
                 }

@@ -115,6 +115,6 @@
                 <input type="text" name="resid" size="2" required>
             </form>
         </div>
-        <a href="searchflights.html">Search for flights</a>
+        <a href="staticpages/searchflights.html">Search for flights</a>
     </body>
 </html>

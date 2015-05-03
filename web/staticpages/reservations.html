@@ -4,11 +4,11 @@
         <title>Reservations</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/styles.css" type="text/css" rel="stylesheet" />
+        <link href="../css/styles.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <h1>Make Reservation</h1>
-        <form name="reserve" action="resconfirm.jsp">
+        <form name="reserve" action="../resconfirm.jsp">
             <p>
                 Flight ID:&nbsp;
                 <input name="fid" type="text" size="2" required/>
@@ -104,7 +104,7 @@
         </form>
         
         <!-- Javascript -->
-        <script src="js/jquery_2_1_3.js"></script>
+        <script src="../js/jquery_2_1_3.js"></script>
         <script>
             function checkSeats(){
                 var fid = document.reserve.fid.value;
@@ -112,7 +112,7 @@
                 var num = document.reserve.numpass.value;
                 
                 // check if seats available
-                $.post("checkSeats.jsp", {fid: fid, cl: cl, num: num}, function (data){
+                $.post("../checkSeats.jsp", {fid: fid, cl: cl, num: num}, function (data){
                     $("#seats-avail").html(data);
                 }); 
             }

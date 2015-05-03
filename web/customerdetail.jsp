@@ -111,6 +111,6 @@
             }
         %>
         <br>
-        <a href='searchflights.html'>Search for flights</a>
+        <a href='staticpages/searchflights.html'>Search for flights</a>
     </body>
 </html>

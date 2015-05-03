@@ -45,7 +45,7 @@
         <h2>Your reservation has been canceled.</h2>
         <ul>
             <li><a href="home.jsp">Return Home</a></li>
-            <li><a href="searchflights.html">New search</a></li>
+            <li><a href="staticpages/searchflights.html">New search</a></li>
         </ul>
     </body>
 </html>

@@ -86,6 +86,6 @@
             }
         %>
         <br>
-        <a href='reservations.html'>Make reservation</a>
+        <a href='staticpages/reservations.html'>Make reservation</a>
     </body>
 </html>
