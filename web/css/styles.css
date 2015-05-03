@@ -35,7 +35,7 @@ table {
 .hide {
     display: none;
 }
-#seats-avail, #validation {
+#seats-avail, .validation {
     color: red;
 }
 #cancel {
